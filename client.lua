@@ -1,6 +1,6 @@
 ---@diagnostic disable: undefined-global, lowercase-global
 -- ╔═══════════════════════════════════════════════════════════╗
--- ║  RDE | IPL MANAGER v1.0.0-alpha          ║
+-- ║  RDE | IPL MANAGER v1.0.1-alpha          ║
 -- ║  Author: RDE | SerpentsByte                               ║
 -- ║  Streaming-safe + in-interior exit + per-IPL map blips    ║
 -- ╚═══════════════════════════════════════════════════════════╝
@@ -1397,7 +1397,7 @@ end, false)
 
 if State.debugMode then
     RegisterCommand('ipldebug', function()
-        print('=== RDE IPL v1.0.0-alpha - Debug Info ===')
+        print('=== RDE IPL v1.0.1-alpha - Debug Info ===')
         print(('Properties: %d'):format((function() local c = 0 for _ in pairs(State.properties) do c = c + 1 end return c end)()))
         print(('Loaded IPLs: %d'):format((function() local c = 0 for _ in pairs(State.loadedIPLs) do c = c + 1 end return c end)()))
         print(('Instance IPLs: %d'):format((function() local c = 0 for _ in pairs(State.instanceIPLs) do c = c + 1 end return c end)()))
@@ -1430,7 +1430,7 @@ CreateThread(function()
     end
 
     print('^2╔═══════════════════════════════════════════════════════════╗^7')
-    print('^2║  RDE | IPL MANAGER v1.0.0-alpha - CLIENT READY                    ║^7')
+    print('^2║  RDE | IPL MANAGER v1.0.1-alpha - CLIENT READY                    ║^7')
     print('^2║  Streaming-safe + interior exit + per-IPL blips           ║^7')
     print('^2╚═══════════════════════════════════════════════════════════╝^7')
 end)
@@ -1474,5 +1474,5 @@ AddEventHandler('onResourceStop', function(resourceName)
     State.currentInstance = nil
     State.currentBucket   = 0
 
-    print('^2[RDE | IPL v1.0.0-alpha]^7 Client cleanup done')
+    print('^2[RDE | IPL v1.0.1-alpha]^7 Client cleanup done')
 end)

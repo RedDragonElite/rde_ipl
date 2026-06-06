@@ -1,6 +1,6 @@
 ---@diagnostic disable: undefined-global, lowercase-global
 -- ╔═══════════════════════════════════════════════════════════╗
--- ║  RDE | IPL MANAGER v1.0.0-alpha          ║
+-- ║  RDE | IPL MANAGER v1.0.1-alpha          ║
 -- ║  Author: RDE | SerpentsByte                               ║
 -- ║  "The most advanced IPL server ever created for FiveM"    ║
 -- ║  100% Statebag-First | Triple Admin | Exploit-Proof       ║
@@ -1379,8 +1379,9 @@ RegisterNetEvent('rde_ipl:server:exitProperty', function()
             local iplData = Config.IPLDatabase[property.iplIndex]
             RDELog.exit(player, instanceId, iplData and iplData.name or instanceId)
         end
-
-        Notify(src, L('info'), L('property_exited'), 'info', 'log-out', '#3b82f6')
+        -- NOTE: property_exited notification is shown client-side in
+        -- rde_ipl:client:exitInstance after the teleport completes.
+        -- Notifying here too caused a duplicate notification (fixed in v1.0.1).
     end
 end)
 
@@ -2001,7 +2002,7 @@ MySQL.ready(function()
 
     -- Startup banner
     print('^2╔═══════════════════════════════════════════════════════════╗^7')
-    print('^2║  RDE | IPL MANAGER v1.0.0-alpha - SERVER READY                    ║^7')
+    print('^2║  RDE | IPL MANAGER v1.0.1-alpha - SERVER READY                    ║^7')
     print('^2║  Interior exit target + per-IPL map blip definitions      ║^7')
     print('^2╠═══════════════════════════════════════════════════════════╣^7')
     print(('^2║  📦 IPLs Available: ^3%-3d^2 | Properties: ^3%-4d^2       ║^7'):format(iplCount, propertyCount))
@@ -2034,9 +2035,9 @@ MySQL.ready(function()
     State.initialized = true
 
     -- Log startup to Nostr
-    RDELog.custom('info', '🐉 RDE IPL Manager v1.0.0-alpha ONLINE | System ready', {
+    RDELog.custom('info', '🐉 RDE IPL Manager v1.0.1-alpha ONLINE | System ready', {
         {'event',   'server_startup'},
-        {'version', '1.0.0'},
+        {'version', '1.0.1'},
         {'config_invalid_coords',   tostring(#_coordIssues.invalid)},
         {'config_identical_coords', tostring(#_coordIssues.identical)},
     })
@@ -2080,7 +2081,7 @@ AddEventHandler('onResourceStop', function(resourceName)
     for _ in pairs(State.properties) do propertyCount = propertyCount + 1 end
 
     -- Log shutdown to Nostr
-    RDELog.custom('warn', ('🛑 RDE IPL Manager v1.0.0-alpha SHUTDOWN | %d properties | %d transactions | $%d revenue'):format(
+    RDELog.custom('warn', ('🛑 RDE IPL Manager v1.0.1-alpha SHUTDOWN | %d properties | %d transactions | $%d revenue'):format(
         propertyCount,
         State.performanceMetrics.totalTransactions,
         State.performanceMetrics.totalRevenue),
@@ -2088,7 +2089,7 @@ AddEventHandler('onResourceStop', function(resourceName)
     )
 
     print('^2╔═══════════════════════════════════════════════════════════╗^7')
-    print('^2║  RDE | IPL MANAGER v1.0.0-alpha - SHUTDOWN COMPLETE               ║^7')
+    print('^2║  RDE | IPL MANAGER v1.0.1-alpha - SHUTDOWN COMPLETE               ║^7')
     print(('^2║  Final Stats: %d properties | %d transactions            ║^7'):format(
         propertyCount,
         State.performanceMetrics.totalTransactions

@@ -17,8 +17,6 @@
 
 ---
 
-<img width="1024" height="1024" alt="image" src="https://github.com/user-attachments/assets/c4f1622e-469e-4410-bb6d-ebf43aa67623" />
-
 ## 🔥 Why This Destroys Every Other IPL Script
 
 Every other IPL/property script either drops players into the void, charges money for it, runs on legacy frameworks, or is an escrow nightmare.

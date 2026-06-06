@@ -1,5 +1,5 @@
 -- ╔═══════════════════════════════════════════════════════════╗
--- ║  RDE | IPL MANAGER v1.0.0-alpha           ║
+-- ║  RDE | IPL MANAGER v1.0.1-alpha           ║
 -- ║  Author: RDE | SerpentsByte                               ║
 -- ║  Statebag-first, collision-safe IPL teleports             ║
 -- ║  + ox_target sphere zone inside each property             ║
@@ -14,7 +14,7 @@ lua54 'yes'
 name 'RDE | IPL MANAGER'
 author 'RDE | SerpentsByte'
 description 'IPL property system with collision-safe streaming, interior exit target, per-IPL blips, statebag sync, triple admin, ox_core'
-version '1.0.0'
+version '1.0.1'
 
 -- 🔧 DEPENDENCIES (ox_core EXCLUSIVE)
 dependencies {
@@ -40,7 +40,7 @@ server_scripts {
     'server.lua'
 }
 
--- 📊 v1.0.0-alpha CHANGELOG
+-- 📊 v1.0.1-alpha CHANGELOG
 --[[
     🔥 v1.3.0 — Per-IPL Blips Edition (2026-05)
 
