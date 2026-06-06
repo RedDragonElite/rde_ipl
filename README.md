@@ -1,8 +1,8 @@
-# 🔥 ULTIMATE IPL PROPERTY SYSTEM V1.0.0-ALPHA - Built on ox_core & Routing Buckets! 🏠
+# 🔥 ULTIMATE IPL PROPERTY SYSTEM V1.0.1-ALPHA - Built on ox_core & Routing Buckets! 🏠
 
 # 🐉 rde_ipl
 
-[![Version](https://img.shields.io/badge/version-1.0.0--alpha-red?style=for-the-badge)](https://github.com/RedDragonElite/rde_ipl)
+[![Version](https://img.shields.io/badge/version-1.0.1--alpha-red?style=for-the-badge)](https://github.com/RedDragonElite/rde_ipl)
 [![License](https://img.shields.io/badge/license-RDE%20Black%20Flag-black?style=for-the-badge)](LICENSE)
 [![FiveM](https://img.shields.io/badge/FiveM-Compatible-blue?style=for-the-badge)](https://fivem.net)
 [![ox_core](https://img.shields.io/badge/Framework-ox__core-blue?style=for-the-badge)](https://github.com/overextended/ox_core)
@@ -16,6 +16,20 @@
 [📖 Installation](#-installation) • [⚙️ Configuration](#️-configuration) • [💬 Commands](#-commands) • [🐉 Nostr Logging](#-nostr-logging) • [📡 Exports](#-exports) • [🐛 Troubleshooting](#-troubleshooting) • [🌐 Website](https://rd-elite.com) • [🔭 Terminal](https://rd-elite.com/Files/NOSTR/)
 
 <img width="1024" height="1024" alt="image" src="https://github.com/user-attachments/assets/beed1cc1-fe6b-4646-982d-d034770ec82d" />
+
+---
+
+## 🚑 Hotfix Notice — v1.0.1-alpha (Mandatory if on v1.0.0-alpha)
+
+> **If you're on v1.0.0-alpha and your players saw a double "Property exited" notification every time they left a property — this is the fix.** The server was calling `Notify(src, 'property_exited')` immediately after `removePlayer()`, while the client's `exitInstance` handler was already showing the exact same notification after the teleport completed. Two sources, same message, every single exit. v1.0.1 removes the server-side duplicate. The client notification is the correct one anyway — it fires after the teleport, not before.
+
+### What changed in v1.0.1-alpha
+
+| # | Fix | Severity | Impact |
+|---|-----|----------|--------|
+| **#1** | Removed redundant `Notify(src, 'property_exited')` from server-side `exitProperty` event — client's `exitInstance` handler already shows the same notification after teleport completes | 🟠 High | Players saw the "Property exited" notification twice on every exit |
+
+> **Drop-in replacement** — same config, same DB schema, same exports. `git pull` + resource restart is all you need.
 
 ---
 
@@ -88,6 +102,8 @@ cd resources
 git clone https://github.com/RedDragonElite/rde_ipl.git
 ```
 
+> **Already on v1.0.0-alpha?** Just `git pull` — no schema migration, no config changes needed. Restart the resource and you're done.
+
 ### Step 2: Add to server.cfg
 
 ```cfg
@@ -119,7 +135,7 @@ That's it. No SQL import needed — tables auto-create on first run. You'll see:
 
 ```
 ╔═══════════════════════════════════════════════════════════╗
-║  RDE | IPL MANAGER v1.0.0 - SERVER READY                  ║
+║  RDE | IPL MANAGER v1.0.1-alpha - SERVER READY            ║
 ║  Interior exit target + per-IPL map blip definitions      ║
 ╠═══════════════════════════════════════════════════════════╣
 ║  📦 IPLs Available: 65  | Properties: 0                   ║
@@ -393,6 +409,10 @@ Server-side debug output includes:
 ---
 
 ## 🐛 Troubleshooting
+
+### "Property exited" notification appears twice
+
+You're on v1.0.0-alpha. The server was sending the notification directly after `removePlayer()` AND the client was showing it again after the teleport. Update to v1.0.1-alpha. Fixed in [#1](CHANGELOG.md).
 
 ### Player spawns underground / falls through the map
 
