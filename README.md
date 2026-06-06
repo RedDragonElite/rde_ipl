@@ -15,6 +15,8 @@
 
 [📖 Installation](#-installation) • [⚙️ Configuration](#️-configuration) • [💬 Commands](#-commands) • [🐉 Nostr Logging](#-nostr-logging) • [📡 Exports](#-exports) • [🐛 Troubleshooting](#-troubleshooting) • [🌐 Website](https://rd-elite.com) • [🔭 Terminal](https://rd-elite.com/Files/NOSTR/)
 
+https://private-user-images.githubusercontent.com/57282916/556396742-7b28c575-19e1-4e06-aed8-00fba388cc8e.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODA3MzU1NjQsIm5iZiI6MTc4MDczNTI2NCwicGF0aCI6Ii81NzI4MjkxNi81NTYzOTY3NDItN2IyOGM1NzUtMTllMS00ZTA2LWFlZDgtMDBmYmEzODhjYzhlLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjA2MDYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwNjA2VDA4NDEwNFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTJhY2M5YzI3OTRkNTRiMmYyZDU5MDNkMGJjMjVhMTY0MDgwMjZiZTRmMmQ4ODEzNjUwZWI4MjZiYWY0MDBhOGUmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JnJlc3BvbnNlLWNvbnRlbnQtdHlwZT1pbWFnZSUyRnBuZyJ9.9_wM5DjnYYoJdU5kAizP4OhOE9MaH39HPJpiXe8IKoM
+
 ---
 
 ## 🔥 Why This Destroys Every Other IPL Script
